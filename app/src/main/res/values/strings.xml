@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CollegeApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="dob_picker_title">Select Date of Birth</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="profile_title">Applicant\'s Profile</string>
+    <string name="family_members_title">Family Member\'s Profile</string>
+    <string name="delete_family_member">Delete Family Member</string>
+    <string name="new_guardian">Add Guardian</string>
+    <string name="new_sibling">Add Sibling</string>
+    <string name="activities">Extracurricular</string>
+    <string name="test_scores">Test Scores</string>
+    <string name="current_courses">Current Courses</string>
+    <string name="letter">Enter Reference Letter Here</string>
+    <string name="submit_reference"> </string>
+
+
+</resources>
