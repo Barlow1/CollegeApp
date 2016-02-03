@@ -21,7 +21,6 @@ import java.util.ArrayList;
 /**
  * Created by PLTW on 12/15/2015.
  */
-//THIS IS A COMMIT TEST
 public class FamilyListFragment extends ListFragment {
 
     private static final String TAG = "FamilyListFragment";
