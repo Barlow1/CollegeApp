@@ -18,6 +18,7 @@
     <string name="current_courses">Current Courses</string>
     <string name="letter">Enter Reference Letter Here</string>
     <string name="submit_reference"> </string>
+    <string name="occupation">Enter Occupation</string>
 
 
 </resources>

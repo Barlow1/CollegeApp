@@ -34,5 +34,16 @@
             android:id="@+id/enter_last_name"
             android:hint="@string/last_name" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/occupation" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/enter_occupation"
+            android:hint="@string/occupation" />
+
     </LinearLayout>
 </RelativeLayout>

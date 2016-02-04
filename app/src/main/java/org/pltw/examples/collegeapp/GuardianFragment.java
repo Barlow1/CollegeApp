@@ -25,6 +25,8 @@ public class GuardianFragment extends Fragment implements FamilyMemberFragment{
     private Guardian mGuardian;
     private TextView mFirstName;
     private TextView mLastName;
+    private TextView mOccupation;
+    private EditText mEnterOccupation;
     private EditText mEnterFirstName;
     private EditText mEnterLastName;
     private Context mAppContext;
@@ -68,18 +70,23 @@ public class GuardianFragment extends Fragment implements FamilyMemberFragment{
         mGuardian = new Guardian();
 
         mFirstName = (TextView)rootView.findViewById(R.id.first_name);
+        mOccupation = (TextView)rootView.findViewById(R.id.occupation);
+        mEnterOccupation = (EditText)rootView.findViewById(R.id.enter_occupation);
         mEnterFirstName = (EditText)rootView.findViewById(R.id.enter_first_name);
         mLastName = (TextView)rootView.findViewById(R.id.last_name);
         mEnterLastName = (EditText)rootView.findViewById(R.id.enter_last_name);
 
         mFirstName.setText(mGuardian.getFirstName());
         mLastName.setText(mGuardian.getLastName());
+        mOccupation.setText(mGuardian.getOccupation());
 
         FirstNameTextChanger firstNameTextChanger = new FirstNameTextChanger();
         LastNameTextChanger lastNameTextChanger = new LastNameTextChanger();
+        OccupationTextChanger occupationTextChanger = new OccupationTextChanger();
 
         mEnterFirstName.addTextChangedListener(firstNameTextChanger);
         mEnterLastName.addTextChangedListener(lastNameTextChanger);
+        mEnterOccupation.addTextChangedListener(occupationTextChanger);
 
         mAppContext = this.getActivity();
         Log.d(TAG, "Context: " + mAppContext);
@@ -105,6 +112,28 @@ public class GuardianFragment extends Fragment implements FamilyMemberFragment{
         @Override
         public void afterTextChanged(Editable s) {
             mFirstName.setText(mGuardian.getFirstName());
+        }
+
+
+
+    }
+    private class OccupationTextChanger implements TextWatcher {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            mGuardian.setOccupation(s.toString());
+            ArrayList<FamilyMember> family = Family.get().getFamily();
+            int index = getActivity().getIntent().getIntExtra(FamilyMember.EXTRA_INDEX,0);
+            family.set(index, (FamilyMember) mGuardian);
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            mOccupation.setText(mGuardian.getFirstName());
         }
 
 
@@ -149,6 +178,7 @@ public class GuardianFragment extends Fragment implements FamilyMemberFragment{
             Log.d(TAG, "Loaded " + mGuardian.getFirstName());
             mFirstName.setText(mGuardian.getFirstName());
             mLastName.setText(mGuardian.getLastName());
+            mOccupation.setText(mGuardian.getOccupation());
             return true;
         } catch (Exception e) {
             mGuardian = new Guardian();
@@ -182,6 +212,7 @@ public class GuardianFragment extends Fragment implements FamilyMemberFragment{
             Log.d(TAG, "Loaded " + mGuardian.getFirstName());
             mFirstName.setText(mGuardian.getFirstName());
             mLastName.setText(mGuardian.getLastName());
+            mOccupation.setText(mGuardian.getOccupation());
         } catch (Exception e) {
             mGuardian = new Guardian();
             Log.e(TAG, "Error loading Guardian from: " + FILENAME, e);
