@@ -10,8 +10,8 @@ public class Guardian extends FamilyMember implements ApplicantData{
 
     public Guardian(){
         super();
-        setFirstName("Roger");
-        setLastName("Dumas");
+        setFirstName("New");
+        setLastName("Guardian");
         setOccupation("Unknown");
         setRelation(GUARDIAN);
     }

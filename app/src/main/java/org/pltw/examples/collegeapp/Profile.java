@@ -64,7 +64,7 @@ public class Profile implements ApplicantData {
 
     public Profile() {
         mFirstName = new String("New");
-        mLastName = new String("Guardian");
+        mLastName = new String("Profile");
         mDateOfBirth = new Date(83, 0, 24);
         mTestScores = new String ("ACT: 36\nSAT: 2400\nPingPong Entrance Exam: 100");
     }

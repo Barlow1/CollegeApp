@@ -10,8 +10,8 @@ public class Sibling extends FamilyMember implements ApplicantData {
 
     public Sibling() {
         super();
-        setFirstName("Bob");
-        setLastName("Ross");
+        setFirstName("New");
+        setLastName("Sibling");
         setRelation(SIBLING);
     }
 
